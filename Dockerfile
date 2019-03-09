@@ -1,6 +1,3 @@
-USER root
-RUN gpasswd -a jenkins docker
-USER jenkins
 FROM golang:1.8
 
 WORKDIR /go/src/app
