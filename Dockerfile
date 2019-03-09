@@ -1,3 +1,6 @@
+USER root
+RUN gpasswd -a jenkins docker
+USER jenkins
 FROM golang:1.8
 
 WORKDIR /go/src/app
@@ -11,3 +14,4 @@ FROM alpine
 COPY --from=0 /app /app
 EXPOSE 8080
 ENTRYPOINT ["/app"]
+RUN gpasswd -a jenkins docker
